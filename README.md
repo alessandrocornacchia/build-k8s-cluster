@@ -10,8 +10,9 @@ It contains the following main components:
 Software packages:
 - `incus` 
 - `ansible`
-Incus:
-- image `k8s` in the `local:` image registry
+
+Incus images:
+- `k8s` in the `local:` image registry (in the future to be pushed upstream)
 
 ## How to run
 There are two dependent steps:  
