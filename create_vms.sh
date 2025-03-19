@@ -13,6 +13,7 @@ VM=kashef-${USER}-w1
 incus launch k8s $VM --vm \
 -c limits.cpu=32 \
 -c limits.memory=16GiB \
+-c agent.nic_config=true \
 -d root,size=100GiB \
 --network $NET \
 -d eth0,ipv4.address=$IP_ADDR
