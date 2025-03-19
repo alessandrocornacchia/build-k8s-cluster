@@ -1,0 +1,24 @@
+---
+- name: Install pre-requisites
+  hosts: all
+  become: true  # needs sudo priviledges
+  tags: pre
+  tasks:
+    - name: Set sudoers for ansible_user
+      ansible.builtin.copy:
+        dest: /etc/sudoers.d/{{ ansible_user }}
+        content: |
+          {{ ansible_user }} ALL=(ALL) NOPASSWD: ALL
+        owner: root
+        group: root
+        mode: 0440  
+
+- name: Configure aliases for kubectl
+  hosts: all
+  tags: alias
+  tasks:
+    - name: Create alias k for kubectl
+      lineinfile:
+        path: "{{ ansible_user_dir }}/.bashrc"
+        line: "alias k=kubectl"
+        create: yes

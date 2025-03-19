@@ -21,3 +21,5 @@ others:
   hosts:
     kashef-albaraa-AI:
       ansible_host: 10.180.100.2
+    kashef-albaraa-AI-v1:
+      ansible_host: 10.180.100.5
